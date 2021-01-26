@@ -15,3 +15,10 @@ JPA Auditing
 
 <img width="1205" alt="Screenshot 2021-01-26 at 21 28 16" src="https://user-images.githubusercontent.com/61505386/105845141-a5635280-601d-11eb-8a11-6b8a6638e20c.png">
 
+---
+머스테치 (https://mustache.github.io/)
+
+장점
+ - 문법이 다른 템플릿 엔진보다 심플하다.
+ - 로직 코드를 사용할 수 없어 View 의 역할과 서버의 역할이 명확하게 분리된다.
+ - Mustache.js 와 Mustache.java 2가지가 다 있어, 하나의 문법으로 클라이언트/서버 템플릿을 모두 사용 가능하다.

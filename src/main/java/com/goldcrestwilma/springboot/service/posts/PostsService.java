@@ -2,13 +2,16 @@ package com.goldcrestwilma.springboot.service.posts;
 
 import com.goldcrestwilma.springboot.domain.posts.Posts;
 import com.goldcrestwilma.springboot.domain.posts.PostsRepository;
+import com.goldcrestwilma.springboot.web.dto.PostsListResponseDto;
 import com.goldcrestwilma.springboot.web.dto.PostsResponseDto;
 import com.goldcrestwilma.springboot.web.dto.PostsSaveRequestDto;
 import com.goldcrestwilma.springboot.web.dto.PostsUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import javax.transaction.Transactional;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 @Service
@@ -27,6 +30,19 @@ public class PostsService {
         posts.update(requestDto.getTitle(), requestDto.getContent());
 
         return id;
+    }
+
+    public void delete(Long id) {
+        Posts posts = postsRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("The posts does not exist. id=" + id));
+
+        postsRepository.delete(posts);
+    }
+
+    @Transactional(readOnly = true)
+    public List<PostsListResponseDto> findAllDesc() {
+        return postsRepository.findAllDesc().stream()
+                .map(PostsListResponseDto::new) // .map(posts -> new PostsListResponseDto(posts))
+                .collect(Collectors.toList());
     }
 
     public PostsResponseDto findById(Long id) {
