@@ -22,3 +22,10 @@ JPA Auditing
  - 문법이 다른 템플릿 엔진보다 심플하다.
  - 로직 코드를 사용할 수 없어 View 의 역할과 서버의 역할이 명확하게 분리된다.
  - Mustache.js 와 Mustache.java 2가지가 다 있어, 하나의 문법으로 클라이언트/서버 템플릿을 모두 사용 가능하다.
+
+---
+스프링 시큐리티와 OAUth 2.0으로 로그인 기능 구현(Google)
+
+<img width="728" alt="Screenshot 2021-01-28 at 1 32 07" src="https://user-images.githubusercontent.com/61505386/106022178-e8e6bb00-6108-11eb-8013-66384a382f05.png">
+<img width="718" alt="Screenshot 2021-01-28 at 1 32 32" src="https://user-images.githubusercontent.com/61505386/106022177-e84e2480-6108-11eb-8755-2723b13716c7.png">
+<img width="624" alt="Screenshot 2021-01-28 at 1 33 45" src="https://user-images.githubusercontent.com/61505386/106022167-e5ebca80-6108-11eb-960b-b79d12d155d1.png">
