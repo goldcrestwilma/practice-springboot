@@ -23,7 +23,7 @@ cp $REPOSITORY/$PROJECT_NAME/build/libs/*.jar $REPOSITORY/
 
 echo "> Check Application Pid"
 
-CURRENT_PID=$(pgrep -fl ${PROJECT_NAME} | grep jar | awk '{print $1}')
+CURRENT_PID=$(pgrep -f practice-springboot*.jar  | awk '{print $1}')
 
 echo "> Application Pid: $CURRENT_PID"
 
@@ -44,5 +44,7 @@ echo "> JAR Name: $JAR_NAME"
 chmod +x $JAR_NAME
 
 nohup java -jar \
-       -Dspring.config.location=classpath:/application.properties,/home/ec2-user/app/application-oauth.properties \
-       $JAR_NAME 2>&1 &
+    -Dspring.config.location=classpath:/application.properties,classpath:/application-real.properties,/home/ec2-user/app/application-oauth.properties,/home/ec2-user/app/application-real-db.properties \
+    -Dspring.profiles.active=real \
+    $JAR_NAME > $REPOSITORY/nohup.out 2>&1 &
+
