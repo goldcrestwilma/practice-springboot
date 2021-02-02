@@ -33,6 +33,7 @@ deploy:
     access_key_id: $AWS_ACCESS_KEY
     secret_access_key: $AWS_SECRET_KEY
     bucket: goldcrestwilma-springboot-build
+    key: goldcrestwilma-springboot-webservice.zip
     bundle_type: zip
     application: goldcrestwilma-springboot-webservice
     deployment_group: goldcrestwilma-springboot-webservice-group
