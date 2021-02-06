@@ -9,8 +9,7 @@ cp $REPOSITORY/zip/*.jar $REPOSITORY/
 
 echo "> Check Application Pid"
 
-#CURRENT_PID=$(pgrep -f practice-springboot*.jar  | awk '{print $1}')
-CURRENT_PID=$(cat boot.pid)
+CURRENT_PID=$(pgrep -f practice-springboot  | awk '{print $1}')
 
 echo "> Application Pid: $CURRENT_PID"
 
